@@ -1,36 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialog} from '@angular/material/dialog';
+import { AngularMaterialComponent } from '../angular-material/angular-material.component';
 @Component({
   selector: 'app-bootstrap',
   templateUrl: './bootstrap.component.html',
   styleUrls: ['./bootstrap.component.css'],
 })
 export class BootstrapComponent implements OnInit {
-  closeResult = '';
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
 
-  // open(content: any) {
-  //   this.modalService
-  //     .open(content, { ariaLabelledBy: 'modal-basic-title' })
-  //     .result.then(
-  //       (result) => {
-  //         this.closeResult = `Closed with: ${result}`;
-  //       },
-  //       (reason) => {
-  //         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //       }
-  //     );
-  // }
+  openDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(AngularMaterialComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
 
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
+  
 }
