@@ -10,8 +10,9 @@ import { MdBootstrapComponent } from './components/md-bootstrap/md-bootstrap.com
 import { NavComponent } from './components/nav/nav.component';
 import { SematicComponent } from './components/sematic/sematic.component';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MdBootstrapComponent,
     AngularMaterialComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule, CommonModule, NgbModule ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatInputModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
